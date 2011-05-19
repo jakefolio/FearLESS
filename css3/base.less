@@ -1,0 +1,75 @@
+.rounded(@radius: 5px) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	-o-border-radius: @radius;
+	border-radius: @radius;
+}
+
+.rounded-expanded(@topLeft: 3px, @topRight: 3px, @bottomRight: 3px, @bottomLeft: 3px) {
+	-webkit-border-top-left-radius: @topLeft;
+	-webkit-border-top-right-radius: @topRight;
+	-webkit-border-bottom-right-radius: @bottomRight;
+	-webkit-border-bottom-left-radius: @bottomLeft;
+	-moz-border-radius-topleft: @topLeft;
+	-moz-border-radius-topright: @topRight;
+	-moz-border-radius-bottomright: @bottomRight;
+	-moz-border-radius-bottomleft: @bottomLeft;
+	border-top-left-radius: @topLeft;
+	border-top-right-radius: @topRight;
+	border-bottom-right-radius: @bottomRight;
+	border-bottom-left-radius: @bottomLeft;
+}
+
+.shadow(@x: 2px, @y: 1px, @blur: 5px, @color: #333) {
+	-moz-box-shadow: @arguments;
+	-webkit-box-shadow: @arguments;
+	box-shadow: @arguments;	
+}
+
+.inner-shadow(@x: 2px, @y: 1px, @distance: 5px, @color: #333) {
+	-moz-box-shadow: inset @arguments;
+	-webkit-box-shadow: inset @arguments;
+	box-shadow: inset @arguments;	
+}
+
+.text-shadow(@x: 3px, @y: 3px, @blur: 3px, @color: #CCC)
+{
+  text-shadow: @arguments;
+  // Add IE Support
+}
+
+.opacity(@op: 80) {
+	// Add IE Support
+	-moz-opacity: @op/100;
+	-khtml-opacity: @op/100;
+	opacity: @op/100;
+}
+
+.scale(@size: 2) {
+	-webkit-transform: scale(@size);
+  -moz-transform: scale(@size);
+  -o-transform: scale(@size);
+  -ms-transform: scale(@size);
+  transform: scale(@size);
+}
+
+.reflection() {
+	
+}
+
+.rotate(@deg: rotate(45deg)) {
+	-webkit-transform: @deg;
+	-moz-transform: @deg;
+	-ms-transform: @deg;
+	-o-transform: @deg;
+	transform: @deg;
+}
+
+.columns(@columns, @gap) {
+	-webkit-column-count: @columns;
+	-webkit-column-gap: @gap;
+	-moz-column-count: @columns; 
+	-moz-column-gap: @gap;
+	column-count: @columns; 
+	column-gap: @gap;	
+}

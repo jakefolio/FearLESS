@@ -1,0 +1,33 @@
+@baseWidth: 960px; 
+
+/* Grid Variables */
+@columns: 12;
+@columnWidth: @baseWidth / @columns; 
+@gutterWidth: 8px;
+@basePadding: 8px; 
+
+.grid1,.grid2,.grid3,.grid4,.grid5,.grid6,.grid7,.grid8,.grid9,.grid10,.grid11,.grid12 {
+	margin:0 (@gutterWidth / 2) @gutterWidth;   
+	padding:@basePadding; 
+	display:inline;   
+	float:left;      
+	word-wrap:break-word;
+}
+.grid1 { width:(@columnWidth * 1) - @gutterWidth - (@basePadding * 2); }
+.grid2 { width:(@columnWidth * 2) - @gutterWidth - (@basePadding * 2); }
+.grid3 { width:(@columnWidth * 3) - @gutterWidth - (@basePadding * 2); } 
+.grid4 { width:(@columnWidth * 4) - @gutterWidth - (@basePadding * 2); }
+.grid5 { width:(@columnWidth * 5) - @gutterWidth - (@basePadding * 2); }
+.grid6 { width:(@columnWidth * 6) - @gutterWidth - (@basePadding * 2); }
+.grid7 { width:(@columnWidth * 7) - @gutterWidth - (@basePadding * 2); }
+.grid8 { width:(@columnWidth * 8) - @gutterWidth - (@basePadding * 2); }
+.grid9 { width:(@columnWidth * 9) - @gutterWidth - (@basePadding * 2); }
+.grid10 { width:(@columnWidth * 10) - @gutterWidth - (@basePadding * 2); }
+.grid11 { width:(@columnWidth * 11) - @gutterWidth - (@basePadding * 2); }
+.grid12 { width:(@columnWidth * 12) - @gutterWidth - (@basePadding * 2); }
+
+/* Add this class to your first grid box when you start a new row */
+.row {
+	clear:both;
+	overflow: hidden;
+}

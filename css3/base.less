@@ -20,22 +20,23 @@
   border-bottom-left-radius: @bottomLeft;
 }
 
-.shadow(@x: 2px, @y: 1px, @blur: 5px, @color: #333) {
-  -moz-box-shadow: @arguments;
-  -webkit-box-shadow: @arguments;
-  box-shadow: @arguments;	
-}
-
-.inner-shadow(@x: 2px, @y: 1px, @distance: 5px, @color: #333) {
-  -moz-box-shadow: inset @arguments;
-  -webkit-box-shadow: inset @arguments;
-  box-shadow: inset @arguments;	
+.shadow(@shadow: 0 1px 3px rgba(0,0,0,.25)) {
+  -webkit-box-shadow: @shadow;
+  -moz-box-shadow: @shadow;
+  box-shadow: @shadow;
 }
 
 .text-shadow(@x: 3px, @y: 3px, @blur: 3px, @color: #CCC)
 {
   text-shadow: @arguments;
   // Add IE Support
+}
+
+.background-size(@x, @y) {
+  -moz-background-size: @arguments;           /* Gecko 1.9.2 (Firefox 3.6) */
+  -o-background-size: @arguments;           /* Opera 9.5 */
+  -webkit-background-size: @arguments;           /* Safari 3.0 */
+  background-size: @arguments;           /* Gecko 2.0 (Firefox 4.0) and other CSS3-compliant browsers */
 }
 
 .opacity(@op: 80) {

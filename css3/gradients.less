@@ -33,4 +33,34 @@
 	.radial() {
 		
 	}
+	
+	.divider(@color: #666, @size: 2px) {
+	  background-image: -webkit-gradient(
+        linear,
+        right top,
+        left top,
+        color-stop(0.5, lighten(@color, 30%)),
+        color-stop(0.5, @color)
+    );
+    background-image: -moz-linear-gradient(
+        right center,
+        lighten(@color, 30%) 50%,
+        @color 50%
+    );
+    background-image: -o-linear-gradient(
+      top,
+      color-stop(0.5, lighten(@color, 30%)),  
+      @color
+    );
+    background-image: -khtml-gradient(
+      linear, 
+      left top, 
+      left bottom, 
+      from(lighten(@color, 30%)), 
+      to(@color)
+    );
+    background-position: left bottom;
+    background-repeat: repeat-y;
+    .background-size(@size, 100%);
+	}
 }

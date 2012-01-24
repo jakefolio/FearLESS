@@ -81,9 +81,14 @@ a:hover { color: #036; }
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
 .invisible { visibility: hidden; }
-.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
-.clearfix:after { clear: both; }
-.clearfix { zoom: 1; }
+.clearfix {
+  zoom: 1;
+  &:before,
+  &:after {
+    content: "\0020"; display: block; height: 0; overflow: hidden;
+  }
+  &:after { clear: both; }
+}
 
 @media print {
   * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important;

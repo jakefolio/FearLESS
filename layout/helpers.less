@@ -1,4 +1,4 @@
-.nobr { white-space: nowrap; }
+.nowrap { white-space: nowrap; }
 .nopadding { padding: 0; }
 .clear { clear: both; }
 .left { float: left; }
@@ -17,4 +17,23 @@
   float: right;
   margin-bottom: 5px;
   margin-left: 5px;
+}
+.hide { display: none; }
+.full-width(@bg: #ccc, @left: 100%, @right: 100%) {
+    position: relative;
+    &:before,
+    &:after {
+        background: @bg;
+        content: "";
+        position: absolute;
+            top: 0;
+            bottom: 0;
+        width: 9999px;
+    }
+    &:before {
+        right: @right;
+    }
+    &:after {
+        left: @left;
+    }
 }

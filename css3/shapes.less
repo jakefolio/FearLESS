@@ -1,5 +1,6 @@
 .circle(@size: 10px) {
   height: @size;
+  width: @size;
   -webkit-border-radius: @size/2;
   -moz-border-radius: @size/2;
   -o-border-radius: @size/2;
@@ -9,6 +10,9 @@
   .left(@size: 10px, @color: #333) {
     border-color: transparent;
     border-right: @size solid @color;
+    border-top-width: @size;
+    border-bottom-width: @size;
+    border-left-width: @size;
     border-size: @size;
     border-style: solid;
     content: "";
@@ -19,6 +23,9 @@
   .right(@size: 10px, @color: #333) {
     border-color: transparent;
     border-left: @size solid @color;
+    border-top-width: @size;
+    border-right-width: @size;
+    border-bottom-width: @size;
     border-size: @size;
     border-style: solid;
     content: "";
@@ -29,6 +36,9 @@
   .up(@size: 10px, @color: #333) {
     border-color: transparent;
     border-bottom: @size solid @color;
+    border-top-width: @size;
+    border-right-width: @size;
+    border-left-width: @size;
     border-size: @size;
     border-style: solid;
     content: "";
@@ -39,6 +49,9 @@
   .down(@size: 10px, @color: #333) {
     border-color: transparent;
     border-top: @size solid @color;
+    border-right-width: @size;
+    border-bottom-width: @size;
+    border-left-width: @size;
     border-size: @size;
     border-style: solid;
     content: "";
@@ -46,4 +59,102 @@
     height: 0;
     width: 0;
   }
+}
+#ribbon {
+  .top(@size: 4px, @leftColor: #333, @rightColor: #333) {
+    @arrow: @size / 2;
+    position: relative;
+      left: -@size;
+    &:before {
+      border: @arrow solid @leftColor;
+      border-top-color: transparent;
+      border-left-color: transparent;
+      content: "";
+      display: block;
+      height: 0;
+      position: absolute;
+        top: -@size;
+        left: 0;
+      width: 0;
+    }
+    &:after {
+      border: @arrow solid @rightColor;
+      border-top-color: transparent;
+      border-right-color: transparent;
+      content: "";
+      display: block;
+      height: 0;
+      position: absolute;
+        top: -@size;
+        right: 0;
+      width: 0;
+    }
+  }
+  .bottom(@size: 4px, @leftColor: #333, @rightColor: #333) {
+    @arrow: @size / 2;
+    position: relative;
+      left: -@size;
+    &:before {
+      border: @arrow solid @leftColor;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+      content: "";
+      display: block;
+      height: 0;
+      position: absolute;
+        bottom: -@size;
+        left: 0;
+      width: 0;
+    }
+    &:after {
+      border: @arrow solid @rightColor;
+      border-bottom-color: transparent;
+      border-right-color: transparent;
+      content: "";
+      display: block;
+      height: 0;
+      position: absolute;
+        bottom: -@size;
+        right: 0;
+      width: 0;
+    }
+  }
+  .left(@size: 4px, @color: #333, @position: "bottom") {
+    @arrow: @size / 2;
+    position: absolute;
+      right: auto;
+      left: -@size;
+    &:before {
+      border: @arrow solid @color;
+      border-top-color: transparent;
+      border-left-color: transparent;
+      content: "";
+      display: block;
+      height: 0;
+      position: absolute;
+        bottom: -@size;
+        left: 0;
+      width: 0;
+    }
+    &:after { display: none; }
+  } 
+  .right(@size: 4px, @color: #333, @position: "top") {
+    @arrow: @size / 2;
+    position: absolute;
+      right: -@size;
+      left: auto;
+    &:before { display: none; }
+    &:after {
+      border: @arrow solid @color;
+      border-top-color: transparent;
+      border-right-color: transparent;
+      content: "";
+      display: block;
+      height: 0;
+      position: absolute;
+        bottom: -@size;
+        right: 0;
+      width: 0;
+    }
+  }   
 }
